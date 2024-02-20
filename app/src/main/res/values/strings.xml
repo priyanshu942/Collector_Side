@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Collector_Side_Garbage_Collection</string>
+    <string name="new_user_register_here"><u>New User? Register here</u></string>
+    <string name="already_register_login_here"><u>Already Register? Login Here</u></string>
+</resources>

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "350182913162",
+    "project_id": "collectorsidegarbagecollection",
+    "storage_bucket": "collectorsidegarbagecollection.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:350182913162:android:44d55d13e55003f243e973",
+        "android_client_info": {
+          "package_name": "com.example.collector_side_garbage_collection"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCZem4p5Flnp1_uER_4t5fkUtDwqyRBtSY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
