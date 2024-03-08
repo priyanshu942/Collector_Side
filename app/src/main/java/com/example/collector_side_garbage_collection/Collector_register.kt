@@ -46,13 +46,14 @@ class Collector_register : AppCompatActivity() {
         auth.createUserWithEmailAndPassword(temail, tpas)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
-                    // Sign in success, update UI with the signed-in user's information
-                    Toast.makeText(this@Collector_register,"Account Created",Toast.LENGTH_SHORT).show()
-                val intent=Intent(this@Collector_register,Collector_UI::class.java)
+
+                    Toast.makeText(this@Collector_register,"Account Created Successfully",Toast.LENGTH_SHORT).show()
+                    val intent=Intent(this@Collector_register,MainActivity::class.java)
                     startActivity(intent)
 
-                } else {
-                    // If sign in fails, display a message to the user
+                }
+                else
+                {
                 Toast.makeText(this@Collector_register,"Fail To Create",Toast.LENGTH_SHORT).show()
                 }
             }
