@@ -48,7 +48,7 @@ class Collector_register : AppCompatActivity() {
                 if (task.isSuccessful) {
                     // Sign in success, update UI with the signed-in user's information
                     Toast.makeText(this@Collector_register,"Account Created",Toast.LENGTH_SHORT).show()
-                val intent=Intent(this@Collector_register,Collector_UI::class.java)
+                 val intent=Intent(this@Collector_register,Collector_UI::class.java)
                     startActivity(intent)
 
                 } else {
