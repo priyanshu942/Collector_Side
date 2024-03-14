@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="cardView" type="id" />
+    <item name="linearLayout" type="id" />
+    <item name="textUserName" type="id" />
+    <item name="textMessage" type="id" />
+    <item name="longitude" type="id" />
+    <item name="latitude" type="id" />
+</resources>
