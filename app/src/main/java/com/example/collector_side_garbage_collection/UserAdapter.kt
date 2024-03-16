@@ -27,8 +27,8 @@ class UserAdapter(
         holder.userNameTextView.text = user.name
 
         holder.itemView.setOnClickListener {
-            Log.d("UserAdapter", "User clicked: ${user.userId}, Image URL: ${user.imageData.imageUrl}")
-            onItemClick(user.userId, user.imageData.imageUrl)
+            Log.d("UserAdapter", "User clicked: ${user.userId}, Image URL: ${user.imageData?.imageUrl}")
+            onItemClick(user.userId, user.imageData!!.imageUrl!!)
         }
     }
 

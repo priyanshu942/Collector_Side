@@ -8,7 +8,7 @@ data class User(
     val mob: String = "",
     val name: String = "",
     val profilePhotoUrl: String = "",
-    val imageData: ImageData = ImageData()
+    val imageData: ImageData?=null
 )
 
 

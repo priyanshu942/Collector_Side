@@ -32,10 +32,10 @@ class MainActivity : AppCompatActivity() {
             val trueEmail=email.text.toString()
             val truePassword=password.text.toString()
 
-            //login(trueEmail,truePassword)
-            val intent= Intent(this,Collector_UI::class.java)
-            startActivity(intent)
-        }
+            login(trueEmail,truePassword)
+//            val intent= Intent(this,Collector_UI::class.java)
+//            startActivity(intent)
+      }
 
     }
 
