@@ -1,5 +1,4 @@
 package com.example.collector_side_garbage_collection.Fragments
-
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -9,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.collector_side_garbage_collection.ImageData
 import com.example.collector_side_garbage_collection.PhotoActivity
 import com.example.collector_side_garbage_collection.R
 import com.example.collector_side_garbage_collection.User
@@ -18,6 +18,9 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
+import com.google.firebase.database.getValue
+import com.google.firebase.database.ktx.getValue
+import com.google.firebase.database.snapshots
 
 class HomeBlankFragment : Fragment() {
 
@@ -45,9 +48,6 @@ class HomeBlankFragment : Fragment() {
         }
 
 
-
-
-
         userRecyclerView.adapter = userAdapter
         userRecyclerView.layoutManager = LinearLayoutManager(requireContext())
 
@@ -58,9 +58,29 @@ class HomeBlankFragment : Fragment() {
             override fun onDataChange(snapshot: DataSnapshot) {
                 val users = mutableListOf<User>()
                 for (userSnapshot in snapshot.children) {
+                    val img=userSnapshot.child("imageData")
+                    val img1=img.getValue(ImageData::class.java)
                     val user = userSnapshot.getValue(User::class.java)
+
+//                    val fnd=img.key
+//                    val userref=databaseReference.child("imageData").child(fnd!!)
+//                    userref.addListenerForSingleValueEvent(object:ValueEventListener{
+//                        override fun onDataChange(snapshot: DataSnapshot) {
+//                            val imgdata=snapshot.child("imageUrl")
+//                            Log.d("FirebaseData","imageUrl${imgdata}")
+//                        }
+//
+//                        override fun onCancelled(error: DatabaseError) {
+//                            TODO("Not yet implemented")
+//                        }
+//
+//                    })
+                    //
                     user?.let {
-                        Log.d("FirebaseData", "User: ${it.userId}, Image URL: ${it.imageData.imageUrl}")
+                       // val img=it.imageData.logitude
+                       val img=userSnapshot.child("imageData").child(it.userId).child("imageUrl")
+
+                        Log.d("FirebaseData", "User: ${it.userId}, Image URL: ${img}")
                         users.add(it) }
                 }
                 userAdapter.updateData(users)
@@ -71,6 +91,8 @@ class HomeBlankFragment : Fragment() {
             }
         })
 
-        return view
-    }
+        return  view
+        }
 }
+
+
