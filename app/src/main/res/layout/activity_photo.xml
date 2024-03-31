@@ -9,8 +9,9 @@
 
     <ImageView
         android:id="@+id/imgv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="335dp"
+        android:layout_height="521dp"
+        android:scaleType="centerCrop"
         android:src="@drawable/ic_launcher_background"
-        android:scaleType="centerCrop" />
+        android:visibility="visible" />
 </RelativeLayout>
